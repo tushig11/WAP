@@ -36,7 +36,8 @@ div.leftFoot {
     font-family: monospace;
 }
 
-header>dl {
+header>dl>dd {
+    display: block;
     margin-left: 0px;
 }
 
