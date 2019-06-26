@@ -37,7 +37,8 @@ div.leftFoot {
 }
 
 .headerList {
-    padding-inline-start: 0px;
+    padding: 0px;
+    margin-left: 0px;
 }
 
 .headerList>li {
