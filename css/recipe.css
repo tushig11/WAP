@@ -1,0 +1,77 @@
+body {
+    background-color: white;
+    color: #404040;
+    font-size: 11pt;
+    font-family: Georgia, Garamond, serif, sans-serif;
+    background-image: url("../images/silverware.jpg");
+    background-repeat: repeat;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: Lucida Sans Unicode, Helvetica, Arial, sans-serif;
+    text-align: left;
+    font-size: 18pt;
+}
+
+ul {
+    list-style-image: url('https://courses.cs.washington.edu/courses/cse190m/09sp/homework/1/pie_icon.gif');
+}
+
+header {
+    align-content: center;
+}
+
+header>h2 {
+    font-size: 22pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+div.leftFoot {
+    text-align: right;
+    font-family: monospace;
+}
+
+h2>span {
+    background-color: #F0F0F0;
+    color: #A4A400;
+    letter-spacing: 0.25em;
+}
+
+a:link {
+    color: #A4A400;
+}
+
+.quotation {
+    background-color: #FFFFA8;
+    font-style: italic;
+    margin: 0px 40px 0px 40px;
+}
+
+.toolTip {
+    text-decoration: underline;
+}
+
+.toolTip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    /* Position the tooltip */
+    position: absolute;
+}
+
+.toolTip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.lineThru {
+    text-decoration: line-through;
+}
