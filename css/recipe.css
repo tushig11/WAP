@@ -36,6 +36,10 @@ div.leftFoot {
     font-family: monospace;
 }
 
+header>dl {
+    margin-left: 0px;
+}
+
 h2>span {
     background-color: #F0F0F0;
     color: #A4A400;
