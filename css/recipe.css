@@ -36,9 +36,12 @@ div.leftFoot {
     font-family: monospace;
 }
 
-header>dl>dd {
-    display: block;
-    margin-left: 0px;
+.headerList {
+    padding-inline-start: 0px;
+}
+
+.headerList>li {
+    list-style: none;
 }
 
 h2>span {
