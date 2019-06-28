@@ -10,16 +10,83 @@
     <div class="container">
         <form action="" target="_blank" method="post">
             <h2 class="title"> Personal Information </h2>
+    <!-- 1st row of Grid -->
             <div class="fname">
-                <label>Firstname: </label><br>
+                <label>Firstname</label><br>
                 <input type="text" required/>
             </div>
             <div class="lname">
-                <label>Lastname: </label><br>
+                <label>Lastname</label><br>
+                <input type="text" required/>
+            </div>
+            <div class="card">
+                <img src="images/card-en.png" alt="Card"/>
+            </div>
+    <!-- 2nd row of Grid -->
+           <div class="birth">
+                <label>Date of Birth</label><br>
+                <input type="date" required/>
+            </div>
+            <div class="mother">
+                <label>Mother's Maiden Name</label><br>
                 <input type="text" required/>
             </div>
             <div class="card">
                 <img src="images/card-en.png" alt="Card" width="auto"/>
+            </div>
+           <div class="insurance">
+                <label>Social Insurance Number (Optional)</label><br>
+                <input type="text" pattern="^[1-9](\d){2}\-(\d){3}\-(\d){3}" title="Follow the Design" placeholder="___-___-___"/>
+            </div>
+            <div class="learnAbout">
+                <label>How did you learn about this card? (Optional)</label><br>
+                <select>
+                    <option selected disabled>Select source</option>
+                    <option>CapitalOne Sponsored Event</option>
+                    <option>Family or Friend</option>
+                    <option>Credit Cards Comparison Site</option>
+                    <option>Other</option>
+                    <option>Mail Offer</option>
+                    <option>Television</option>
+                    <option>Online Banner Ad or Video</option>
+                    <option>Search Engine</option>
+                    <option>Outdoor or Transit Ad</option>
+                    <option>Newspaper</option>                   
+                </select>
+            </div>
+    <!-- seperator -->
+            <div class="seperator">
+                <hr>
+            </div>
+            
+            <!-- Title of 2nd Section -->
+            <h2 class="title1"> Contact Information </h2>
+    <!-- 4rd row of Grid -->
+            <div class="home">
+                <label>Home Address (No P.O. Boxes)</label><br>
+                <input type="text" required/>
+            </div>
+            <div class="apt">
+                <label>Suite/Apt. # (if Applicable)</label><br>
+                <input type="text" required/>
+            </div>
+    <!-- 5th row of Grid -->
+           <div class="email">
+                <label>Email Address</label><br>
+                <input type="email" required/>
+            </div>
+            <div class="phone">
+                <label>Primary Phone Number</label><br>
+                <input type="phone" pattern="^\([1-9](\d){2}\)(\d){3}\-(\d){4}" required placeholder="(___) ___-____"/>
+            </div>   
+    <!-- seperator -->
+            <div class="seperator1">
+                <hr>
+            </div>    
+     <!-- Title of 2nd Section -->
+            <h2 class="title2"> Authorized User </h2>
+            <div class="checkBox">
+             <span> <input type="checkbox" /><strong>Yes!</strong> I would like to add an Authorized User (AU) to my account and receive a second card with their name on it.</span>
             </div>
         </form>
         

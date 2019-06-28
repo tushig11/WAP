@@ -3,15 +3,58 @@
     width: 1024px;
 }
 
+h2 {
+    text-align: center;
+}
+
 form {
+    text-align: left;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 170px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 10px 10px;
-    grid-template-areas: "title title title title title title" "fname fname lname lname card card";
+    grid-template-areas: "title title title title title title" "fname fname lname lname card card" "birth birth mother mother card card" "ssn ssn ssn learn learn learn" "sep sep sep sep sep sep" "title1 title1 title1 title1 title1 title1" "home home home home apt apt" "email email email phone phone phone" "sep1 sep1 sep1 sep1 sep1 sep1" "title2 title2 title2 title2 title2 title2" "check check check check check check";
+}
+
+.checkBox {
+    float: left;
+    vertical-align: middle;
+    grid-area: check;
+}
+
+.checkBox>span {
+    overflow: auto;
+}
+
+.seperator {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    grid-area: sep;
+}
+
+.seperator1 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    grid-area: sep1;
+}
+
+.insurance {
+    grid-area: ssn;
+}
+
+.learnAbout {
+    grid-area: learn;
 }
 
 .title {
     grid-area: title;
+}
+
+.title1 {
+    grid-area: title1;
+}
+
+.title2 {
+    grid-area: title2;
 }
 
 .fname {
@@ -24,4 +67,55 @@ form {
 
 .card {
     grid-area: card;
+}
+
+.birth {
+    grid-area: birth;
+}
+
+.mother {
+    grid-area: mother;
+}
+
+.home {
+    grid-area: home;
+}
+
+.apt {
+    grid-area: apt;
+}
+
+.email {
+    grid-area: email;
+}
+
+.phone {
+    grid-area: phone;
+}
+
+input[type] {
+    width: 90%;
+    padding-left: 5%;
+    height: 40px;
+}
+
+input[type="checkbox"] {
+    padding-left: 5%;
+    width: 20px;
+    float: left;
+}
+
+select {
+    width: 90%;
+    padding-left: 5%;
+    height: 50px;
+}
+
+.card>img {
+    width: 300px;
+}
+
+label {
+    font-size: 20px;
+    font-weight: bolder;
 }
