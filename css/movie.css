@@ -19,10 +19,6 @@ header {
     text-shadow: 3px 3px #999999;
 }
 
-nav {
-    position: relative;
-}
-
 .container {
     width: 800px;
     margin-left: auto;
@@ -34,12 +30,41 @@ nav {
 
 .rating {
     width: 550px;
+    overflow: auto;
 }
 
 .overall {
     width: 250px;
     background-color: #A2B964;
     float: right;
+    font-family: Arial, sans-serif;
+    font-size: 8pt;
+}
+
+.overall>dl {
+    margin-right: 10pt;
+    margin-left: 10pt;
+}
+
+dl>dt {
+    padding-top: 10pt;
+    font-weight: bold;
+}
+
+.pages {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: #A2B964;
+    height: 100%;
+    padding: 5px;
+    text-align: center;
+    clear: both;
+}
+
+dd>ul {
+    list-style: none;
+    margin-left: 0px;
+    padding-left: 0px;
 }
 
 .banner {
