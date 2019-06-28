@@ -1,0 +1,128 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana, Tahoma, sans-serif, serif;
+    font-size: 8px;
+    background-image: url("../images/lab3/background.png");
+}
+
+header {
+    text-align: center;
+    background-image: url("../images/lab3/bannerbg.png");
+}
+
+#movieTitle {
+    font-family: Tahoma, Verdana, sans-serif, serif;
+    text-align: center;
+    font-size: 24pt;
+    font-weight: bold;
+    text-shadow: 3px 3px #999999;
+}
+
+nav {
+    position: relative;
+}
+
+.container {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 4px solid grey;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.rating {
+    width: 550px;
+}
+
+.overall {
+    width: 250px;
+    background-color: #A2B964;
+    float: right;
+}
+
+.banner {
+    display: flex;
+    background-image: url(../images/lab3/rbg.png);
+    vertical-align: bottom;
+}
+
+.comments {
+    display: flex;
+}
+
+.comments:after {
+    clear: both;
+}
+
+.leftCol {
+    float: left;
+    width: 50%;
+}
+
+.rightCol {
+    float: left;
+    width: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.comments>p {
+    display: inline-block;
+    width: 47%;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin-left: 2%
+}
+
+.comBody {
+    margin-left: 2%;
+    border: 2px solid grey;
+    border-radius: 10px;
+    font-size: 8pt;
+    background-color: #E8DC9B;
+    padding: 8px;
+    overflow: auto;
+}
+
+.rightCol>.author {
+    margin-right: 2%;
+}
+
+.rightCol>.comBody {
+    margin-right: 2%;
+}
+
+.comBody>img {
+    float: left;
+    padding-right: 5px;
+    overflow: auto;
+}
+
+.author {
+    margin-left: 2%;
+    font-style: italic;
+    padding-bottom: 20pt;
+}
+
+.author>img {
+    float: left;
+    padding-right: 5px;
+}
+
+#rate33 {
+    font-size: 48pt;
+    color: red;
+    font-weight: bold;
+}
+
+footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
