@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="" target="_blank" method="post">
+        <form action="form.html" target="_blank" method="post">
             <h2 class="title"> Personal Information </h2>
     <!-- 1st row of Grid -->
             <div class="fname">
@@ -25,7 +25,7 @@
     <!-- 2nd row of Grid -->
            <div class="birth">
                 <label>Date of Birth</label><br>
-                <input type="date" required/>
+                <input type="text" required pattern="^(1(?=[0-2])|0(?=[1-9])\/" placeholder="MM/DD/YYYY"/>
             </div>
             <div class="mother">
                 <label>Mother's Maiden Name</label><br>
@@ -77,7 +77,7 @@
             </div>
             <div class="phone">
                 <label>Primary Phone Number</label><br>
-                <input type="phone" pattern="^\([1-9](\d){2}\)(\d){3}\-(\d){4}" required placeholder="(___) ___-____"/>
+                <input type="text" pattern="^\([1-9](\d){2}\)(\d){3}\-(\d){4}" required placeholder="(___) ___-____"/>
             </div>   
     <!-- seperator -->
             <div class="seperator1">
