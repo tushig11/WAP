@@ -1,0 +1,27 @@
+.container {
+    text-align: center;
+    width: 1024px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 170px;
+    grid-gap: 10px 10px;
+    grid-template-areas: "title title title title title title" "fname fname lname lname card card";
+}
+
+.title {
+    grid-area: title;
+}
+
+.fname {
+    grid-area: fname;
+}
+
+.lname {
+    grid-area: lname;
+}
+
+.card {
+    grid-area: card;
+}
