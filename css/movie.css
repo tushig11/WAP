@@ -83,12 +83,12 @@ dd>ul {
 
 .leftCol {
     float: left;
-    width: 50%;
+    width: 49%;
 }
 
 .rightCol {
     float: left;
-    width: 50%;
+    width: 51%;
 }
 
 .row:after {
