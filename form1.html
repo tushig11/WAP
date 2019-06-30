@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WAP - HTML Form</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <div class="container">
+        <form action="form1.html" target="_blank" method="post">
+            <h2> Personal Information </h2>
+    <!-- 1st row of Grid -->
+
+                <label>Firstname</label><br>
+                <input type="text" required/>
+
+  
+                <label>Lastname</label><br>
+                <input type="text" required/>
+
+
+                <img src="images/card-en.png" alt="Card"/>
+
+    <!-- 2nd row of Grid -->
+
+                <label>Date of Birth</label><br>
+                <input type="text" required pattern="^(1(?=[0-2])|0(?=[1-9])\/" placeholder="MM/DD/YYYY"/>
+
+                <label>Mother's Maiden Name</label><br>
+                <input type="text" required/>
+
+                <label>Social Insurance Number (Optional)</label><br>
+                <input type="text" pattern="^[1-9](\d){2}\-(\d){3}\-(\d){3}" title="Follow the Design" placeholder="___-___-___"/>
+
+                <label>How did you learn about this card? (Optional)</label><br>
+                <select>
+                    <option selected disabled>Select source</option>
+                    <option>CapitalOne Sponsored Event</option>
+                    <option>Family or Friend</option>
+                    <option>Credit Cards Comparison Site</option>
+                    <option>Other</option>
+                    <option>Mail Offer</option>
+                    <option>Television</option>
+                    <option>Online Banner Ad or Video</option>
+                    <option>Search Engine</option>
+                    <option>Outdoor or Transit Ad</option>
+                    <option>Newspaper</option>                   
+                </select>
+
+    <!-- seperator -->
+
+                <hr>
+
+            
+            <!-- Title of 2nd Section -->
+            <h2 class="title1"> Contact Information </h2>
+    <!-- 4rd row of Grid -->
+
+                <label>Home Address (No P.O. Boxes)</label><br>
+                <input type="text" required/>
+
+                <label>Suite/Apt. # (if Applicable)</label><br>
+                <input type="text" required/>
+
+    <!-- 5th row of Grid -->
+
+                <label>Email Address</label><br>
+                <input type="email" required/>
+
+                <label>Primary Phone Number</label><br>
+                <input type="text" pattern="^\([1-9](\d){2}\)(\d){3}\-(\d){4}" required placeholder="(___) ___-____"/>
+
+    <!-- seperator -->
+
+                <hr>
+ 
+     <!-- Title of 2nd Section -->
+            <h2 class="title2"> Authorized User </h2>
+
+            <input type="checkbox" /><span><strong>Yes!</strong> I would like to add an Authorized User (AU) to my account and receive a second card with their name on it.</span>
+
+        </form>
+        
+    </div>
+    <footer>
+        <a href="index.html">
+            <img src="images/home.png" alt="css validator"/>
+        </a>  
+        <a href="https://validator.w3.org/check/referer">
+            <img src="images/w3c-html.png" alt="html validator"/>
+        </a>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer">
+            <img src="images/w3c-css.png" alt="css validator"/>
+        </a>
+    </footer>
+</body>
+</html>

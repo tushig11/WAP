@@ -12,7 +12,60 @@ form {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 10px 10px;
-    grid-template-areas: "title title title title title title" "fname fname lname lname card card" "birth birth mother mother card card" "ssn ssn ssn learn learn learn" "sep sep sep sep sep sep" "title1 title1 title1 title1 title1 title1" "home home home home apt apt" "email email email phone phone phone" "sep1 sep1 sep1 sep1 sep1 sep1" "title2 title2 title2 title2 title2 title2" "check check check check check check";
+    grid-template-areas: "title title title title title title" "fname fname lname lname card card" "birth birth mother mother card card" "ssn ssn ssn learn learn learn" "sep sep sep sep sep sep" "title1 title1 title1 title1 title1 title1" "home home home home apt apt" "email email email phone phone phone" "sep1 sep1 sep1 sep1 sep1 sep1" "title2 title2 title2 title2 title2 title2" "check check check check check check" "sep2 sep2 sep2 sep2 sep2 sep2" "title3 title3 title3 title3 title3 title3" "eStatus eStatus eStatus empty empty empty" "sep3 sep3 sep3 sep3 sep3 sep3" "title4 title4 title4 title4 title4 title4" "radio1 radio1 radio1 radio1 radio1 radio1" "aIncome aIncome aIncome hIncome hIncome hIncome" "mort mort mort rent rent rent" "acc acc acc cOrc cOrc cOrc" "sep4 sep4 sep4 sep4 sep4 sep4" "not not not not not not" "submit submit submit submit submit submit";
+}
+
+#sub {
+    height: 50px;
+    background-color: #4CAF50;
+    font-size: 20px;
+    text-align: center;
+    width: 60%;
+    margin-left: 20%
+}
+
+.notice {
+    grid-area: not;
+}
+
+.submitField {
+    grid-area: submit;
+}
+
+.cardOrcash {
+    grid-area: cOrc;
+}
+
+.account {
+    grid-area: acc;
+}
+
+.mortGage {
+    grid-area: mort;
+}
+
+.rent {
+    grid-area: rent;
+}
+
+.aIncome {
+    grid-area: aIncome;
+}
+
+.hIncome {
+    grid-area: hIncome;
+}
+
+.radio1 {
+    grid-area: radio1;
+}
+
+.eStatus {
+    grid-area: eStatus;
+}
+
+.empty {
+    grid-area: empty;
 }
 
 .checkBox {
@@ -37,6 +90,24 @@ form {
     grid-area: sep1;
 }
 
+.seperator2 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    grid-area: sep2;
+}
+
+.seperator3 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    grid-area: sep3;
+}
+
+.seperator4 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    grid-area: sep4;
+}
+
 .insurance {
     grid-area: ssn;
 }
@@ -55,6 +126,14 @@ form {
 
 .title2 {
     grid-area: title2;
+}
+
+.title3 {
+    grid-area: title3;
+}
+
+.title4 {
+    grid-area: title4;
 }
 
 .fname {
@@ -100,9 +179,15 @@ input[type] {
 }
 
 input[type="checkbox"] {
-    padding-left: 5%;
     width: 20px;
     float: left;
+    margin-left: 10px;
+}
+
+input[type="radio"] {
+    display: inline-block;
+    width: 20px;
+    margin-left: 10px;
 }
 
 select {
