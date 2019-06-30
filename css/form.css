@@ -12,7 +12,7 @@ form {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 10px 10px;
-    grid-template-areas: "title title title title title title" "fname fname lname lname card card" "birth birth mother mother card card" "ssn ssn ssn learn learn learn" "sep sep sep sep sep sep" "title1 title1 title1 title1 title1 title1" "home home home home apt apt" "email email email phone phone phone" "sep1 sep1 sep1 sep1 sep1 sep1" "title2 title2 title2 title2 title2 title2" "check check check check check check" "sep2 sep2 sep2 sep2 sep2 sep2" "title3 title3 title3 title3 title3 title3" "eStatus eStatus eStatus empty empty empty" "sep3 sep3 sep3 sep3 sep3 sep3" "title4 title4 title4 title4 title4 title4" "radio1 radio1 radio1 radio1 radio1 radio1" "aIncome aIncome aIncome hIncome hIncome hIncome" "mort mort mort rent rent rent" "acc acc acc cOrc cOrc cOrc" "sep4 sep4 sep4 sep4 sep4 sep4" "not not not not not not" "submit submit submit submit submit submit";
+    grid-template-areas: "title title title title title title" "fname fname lname lname card card" "birth birth mother mother card card" "ssn ssn ssn learn learn learn" "sep sep sep sep sep sep" "title1 title1 title1 title1 title1 title1" "home home home home apt apt" "email email email phone phone phone" "sep1 sep1 sep1 sep1 sep1 sep1" "title2 title2 title2 title2 title2 title2" "check check check check check check" "sep2 sep2 sep2 sep2 sep2 sep2" "title3 title3 title3 title3 title3 title3" "eStatus eStatus eStatus empty empty empty" "sep3 sep3 sep3 sep3 sep3 sep3" "title4 title4 title4 title4 title4 title4" "radio1 radio1 radio1 radio1 radio1 radio1" "aIncome aIncome aIncome hIncome hIncome hIncome" "mort mort mort rent rent rent" "acc acc acc cOrc cOrc cOrc" "sep4 sep4 sep4 sep4 sep4 sep4" "notice notice notice notice notice notice" "submit submit submit submit submit submit";
 }
 
 #sub {
@@ -25,7 +25,7 @@ form {
 }
 
 .notice {
-    grid-area: not;
+    grid-area: notice;
 }
 
 .submitField {
