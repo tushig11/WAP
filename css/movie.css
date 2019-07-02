@@ -151,3 +151,25 @@ footer {
     right: 0;
     bottom: 0;
 }
+
+.popUp {
+    position: fixed;
+    top: 20%;
+    left: 33%;
+    width: 650px;
+    height: 400px;
+    border: 2px solid white;
+    border-radius: 20px;
+    background: lightblue;
+    background-image: url(../images/lab3/popup.png);
+    background-size: 610px;
+}
+
+.popBtn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 24px;
+    color: white;
+    background: black;
+}
