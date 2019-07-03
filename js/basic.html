@@ -17,5 +17,51 @@
         document.getElementById('size-12').onclick = makeSizer(12);
         document.getElementById('size-14').onclick = makeSizer(14);
         document.getElementById('size-18').onclick = makeSizer(18);
+
+    var x = 1; 
+    function foo() { 
+        console.log(x); 
+        var y = 2; 
+        function foo1() { 
+            var y = 3; 
+            if (!x) { z = 4; } 
+            var x = 5; 
+            console.log(x + y + z); 
+        } 
+        if(y==2){ var x = 3; } 
+        //console.log(z); 
+        foo1(); /* Comment this call and see the changes */ 
+        console.log(x); 
+        console.log(y); 
+        console.log(z); 
+    } 
+    console.log(x); 
+    //console.log(y); 
+    //console.log(z); 
+    foo(); /* Comment this call and see the changes */ 
+    console.log(x); 
+    //console.log(y); 
+    //console.log(z);
+
+    var x = 1; 
+    var y = 2; 
+    var z = 3; 
+    function foo() { 
+        function foo1() { 
+            console.log(`value of x: ${x}`); 
+            console.log(`value of y: ${y}`); 
+            console.log(`value of z: ${z}`); 
+        } 
+        var z = 4; 
+        foo1(); 
+        var x = 3; 
+        console.log(`value of x: ${x}`); 
+        console.log(`value of y: ${y}`); 
+    } 
+    console.log(`value of y: ${y}`); 
+    foo(); 
+    console.log(`value of x: ${x}`); 
+    console.log(`value of z: ${z}`);
+
     </script>
 </html>
