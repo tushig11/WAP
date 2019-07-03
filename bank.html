@@ -11,9 +11,9 @@
         <h2>Bank Account - JS2</h2>
         <form action="#">
             <label>Account: </label>
-            <input type="text" id="acc" placeholder="enter Account name ..."/><br>
+            <input type="text" id="acc" placeholder="string starts with Capital letter" pattern="^[A-Z][a-z]*" title="string starts with Capital letter"/><br>
             <label>Deposit: </label>
-            <input type="text" id="deposit" placeholder="enter Amount of deposit ..."/><br>
+            <input type="text" id="deposit" placeholder="number 1 or more" pattern="^[1-9][0-9]*" title="1 or more"/><br>
             <button id="createNew">Create new account</button><br>
             <textarea id="data"></textarea>
         </form>
