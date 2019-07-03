@@ -21,7 +21,7 @@ window.onload = function() {
             add: function() {
                 console.log(reName.test(name.value));
                 if (reName.test(name.value) && reDep.test(deposit.value)) {
-                    let newAcc = { name: name.value, balance: deposit.value }
+                    let newAcc = { name: name.value, balance: deposit.value };
                     accountInfoList.push(newAcc);
                     console.log(accountInfoList);
                     printAccounts();
@@ -29,10 +29,10 @@ window.onload = function() {
                     alert("Enter Correct information ...");
                 }
             }
-        }
+        };
     }
 
     var acc = Account();
     var newBtn = document.getElementById("createNew");
     newBtn.onclick = acc.add;
-}
+};
