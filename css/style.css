@@ -63,3 +63,28 @@
     footer {
         margin-top: 20px;
     }
+    
+    form>label {
+        font-size: 14px;
+        font-weight: bold;
+        padding: 10px;
+    }
+    
+    #acc,
+    #deposit {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    
+    #createNew {
+        height: 30px;
+        width: 200px;
+        margin-bottom: 10px;
+    }
+    
+    #data {
+        width: 270px;
+        height: 200px;
+        padding: 0px;
+        text-align: left;
+    }
