@@ -93,12 +93,13 @@
             <h2 class="title3"> Employment Information </h2>
             <div class="eStatus">
                 <label>Employment status</label><br>
-                <select required placeholder="Select status">
-                    <option>Employed</option>
-                    <option>Self-Employed</option>
-                    <option>Retired</option>
-                    <option>Student</option>
-                    <option>Unemployment</option>                  
+                <select>
+                    <option value="" disabled selected>Select status</option>
+                    <option value="0">Employed</option>
+                    <option value="1">Self-Employed</option>
+                    <option value="2">Retired</option>
+                    <option value="3">Student</option>
+                    <option value="4">Unemployment</option>                  
                 </select>
             </div>
             <div class="empty"></div>
@@ -133,11 +134,12 @@
             </div>
             <div class="account" >
                 <label>Do you have any bank accounts?</label><br>
-                <select required placeholder="Select a type">
-                    <option>Checking and Savings</option>
-                    <option>Checking Only</option>
-                    <option>Savings Only</option>
-                    <option>Neither</option>               
+                <select>
+                    <option value="" disabled selected>Select a type</option>
+                    <option value="0">Checking and Savings</option>
+                    <option value="1">Checking Only</option>
+                    <option value="2">Savings Only</option>
+                    <option value="3">Neither</option>               
                 </select>
             </div>  
            <div class="cardOrcash">
