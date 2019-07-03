@@ -1,0 +1,49 @@
+Question 9:
+
+    var x = 1; // (Global scope x)
+    function foo() { 
+        console.log(x); // (Foo scope x) it'll print undefined
+        var y = 2; // (Foo scope y)
+        function foo1() { 
+            var y = 3; //(Foo1 scope y)
+            if (!x) { z = 4; } // (Foo1 x hoisted and undefined) it'll assign 4 to z ( z is defined in Global scope )
+            var x = 5;  // (Foo1 scope x)
+            console.log(x + y + z); // it'll print 12
+        } 
+        if(y==2){ var x = 3; } 
+        //console.log(z); // it'll gives an error Because z will defined after foo1() function invokes
+        foo1(); /* Comment this call and see the changes */  // if we comment this function we can't use z
+        console.log(x); // it'll print 3 (Foo scope x) 
+        console.log(y); // it'll print 2 (Foo scope y)
+        console.log(z); // it'll print 4 (Global scope z)
+    } 
+    console.log(x); // it'll print 1 (Global scope x)
+    //console.log(y); // it'll gives an error there is no y in Global scope
+    //console.log(z); // it'll print an error z is defined after foo() -> foo1() funtion invokes
+    foo(); /* Comment this call and see the changes */     // if we comment this function only (Global scope x) works
+    console.log(x); // it'll print 1 (Global scope x)
+    //console.log(y); // it'll gives a error there is no y in Global scope
+    //console.log(z); // it'll print 4 z is defined inside the foo1() 
+
+Question 10:
+
+    var x = 1; // (Global scope x hoisted and assigned value)
+    var y = 2; // (Global scope y hoisted and assigned value)
+    var z = 3; // (Global scope z hoisted and assigned value)
+    function foo() { 
+        function foo1() { 
+            console.log(`value of x: ${x}`); // it'll print undefined foo scope x hoisted
+            console.log(`value of y: ${y}`); // it'll print 2 global scope y
+            console.log(`value of z: ${z}`); // it'll print 4 foo scope z assigned before foo1() function invokes
+        } 
+        var z = 4; // (Foo scope z)
+        foo1(); 
+        var x = 3; // (Foo scope z)
+        console.log(`value of x: ${x}`); // it'll print 3 foo scope x
+        console.log(`value of y: ${y}`); // it'll print 2 global scope y
+    } 
+
+    console.log(`value of y: ${y}`);  // it'll print 2 global scope y 
+    foo(); 
+    console.log(`value of x: ${x}`); // it'll print 1 global scope x
+    console.log(`value of z: ${z}`); // it'll print 3 global scope z
