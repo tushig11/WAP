@@ -1,0 +1,31 @@
+Question 2:
+
+let module = (function(){
+	x=10;
+	let outer1="outer1";
+	function f1(arg1, arg2){
+		let func1 = function(){ return arg2;};
+	}
+	return outer1;
+})();
+alert(module);
+alert(x);
+
+a.
+b.
+c.
+d.
+
+Question 4:
+
+(function(x,y){ 
+	"use strict"; 
+	console.log(this); 
+	console.log(x,y); 
+	const obj = {x:2, foo:function(){console.log(this.x)}}; 
+	obj.foo(); 
+	obj.bar = () =>console.log(this.x); 
+	obj.bar(); 
+})(5,7);
+
+Answer: 
