@@ -11,10 +11,10 @@ let module = (function(){
 alert(module);
 alert(x);
 
-a.
-b.
-c.
-d.
+a. x is only global variable here
+b. i think f1() is a closure but didn't find any closure after debuging
+c. outer1 and 10;
+d. can't call the f1() from outside because it's encapsulated into the anonymous function.
 
 Question 4:
 
@@ -28,4 +28,4 @@ Question 4:
 	obj.bar(); 
 })(5,7);
 
-Answer: 
+Answer: The this keyword refers to the object that called the function, if the object is not specified, functions in strict mode will return undefined and functions in normal mode will return the global object (window)
