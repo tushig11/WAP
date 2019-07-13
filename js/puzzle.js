@@ -1,100 +1,136 @@
-var blank_x = 300;
-var blank_y = 300;
-var myFunc = PuzzleFunc();
-
 $(function() {
-    init();
-    $(".puzzlepiece").click(myFunc.check);
-    $("#shufflebutton").click(shuffle);
-});
+    "use strict";
+    var puzzleArea = $('#puzzlearea');
+    var divs = $("#puzzlearea div");
+    var emptyRow = 3;
+    var emptyCol = 3;
+    const puzzleSize = 4;
 
-
-function init() {
-    var puzzleArea = document.getElementById('puzzlearea');
-    var divs = puzzleArea.getElementsByTagName("div");
+    console.log(divs);
 
     // initialize each piece
-    for (var i = 0; i < divs.length; i++) {
-        var div = divs[i];
+    for (var i = 0; i <= divs.length; i++) {
+
+        var div;
+        if (i == divs.length) {
+            divs[i] = document.createElement('div');
+            $(divs[i - 1]).after(divs[i]);
+            div = $(divs[i]);
+            div.css({ "backgroundSize": '0 0' });
+            //emptyRow + emptyCol
+        } else {
+            div = $(divs[i]);
+
+        }
 
         // calculate x and y for this piece
-        var x = ((i % 4) * 100);
-        var y = (Math.floor(i / 4) * 100);
+        var x = ((i % puzzleSize) * 100);
+        var y = (Math.floor(i / puzzleSize) * 100);
 
         // set basic style and background
-        div.className = "puzzlepiece";
-        div.style.left = x + 'px';
-        div.style.top = y + 'px';
-        div.style.backgroundImage = 'url("images/background.jpg")';
-        div.style.backgroundPosition = -x + 'px ' + (-y) + 'px';
+        div.css({
+                "left": x + 'px',
+                "top": y + 'px',
+                "backgroundPosition": -x + 'px ' + (-y) + 'px'
+            })
+            .addClass("puzzlepiece");
+
+        div.attr("id", "square_" + i % puzzleSize + "_" + Math.floor(i / puzzleSize));
+
 
         // store x and y for later
         div.x = x;
         div.y = y;
+        divs[i].x = x;
+        divs[i].y = y;
 
-    }
-}
 
-function PuzzleFunc() {
+        clickHandler("#square_" + i % puzzleSize + "_" + Math.floor(i / puzzleSize), i);
 
-    function left(x, y) {
-        return blank_y == y && x - blank_x == 100 ? true : false;
-    }
+        function clickHandler(id, txt) {
 
-    function right(x, y) {
-        return blank_y == y && blank_x - x == 100 ? true : false;
-    }
+            $(id).click(function() {
+                //$("h1").text( txt + " "+ emptyCol % puzzleSize + ":" + emptyRow * puzzleSize );
+                if (movable(txt)) {
+                    swapPiece(txt, emptyCol % puzzleSize + emptyRow * puzzleSize);
+                }
+                if (checkWinner()) $("h1").text("Congrats, You won!");
+            });
 
-    function up(x, y) {
-        return blank_x == x && blank_y - y == 100 ? true : false;
-    }
+            $(div).mouseover(function() {
+                if (movable(txt)) {
+                    $(divs[txt]).addClass("movablepiece");
+                }
+            });
 
-    function down(x, y) {
-        return blank_x == x && y - blank_y == 100 ? true : false;
-    }
+            $(div).mouseout(function() {
+                $(divs[txt]).removeClass("movablepiece");
+            });
 
-    function swap(puzzle) {
-        var temp = puzzle.position().top;
-        puzzle.css({ top: blank_y });
-        blank_y = temp;
-        temp = puzzle.position().left;
-        puzzle.css({ left: blank_x });
-        blank_x = temp;
-    }
-
-    function checkAndSwap() {
-        var puzzle = $(this);
-        var position = puzzle.position();
-        var old_x = position.left;
-        var old_y = position.top;
-
-        if (left(old_x, old_y) || right(old_x, old_y) || up(old_x, old_y) || down(old_x, old_y)) {
-            swap(puzzle);
         }
+
     }
 
-    return {
-        left: left,
-        right: right,
-        up: up,
-        down: down,
-        check: checkAndSwap,
-        swap: swap,
-    };
-}
+    function swapPiece(e1, e2) {
+        var txt = $(divs[e1]).text();
+        var x = divs[e1].x;
+        var y = divs[e1].y;
 
 
-function shuffle() {
-    for (var i = 0; i < 300; i++) {
-        var numElements = $('.puzzlepiece').length;
-        var randomNum = Math.floor(Math.random() * 100 % numElements) + 1;
-        //Select your random element
-        var element = $('.puzzlepiece:nth-child(' + randomNum + ')');
-        var old_x = element.position().left;
-        var old_y = element.position().top;
-        var swap = myFunc.swap;
-        if (myFunc.left(old_x, old_y) || myFunc.right(old_x, old_y) || myFunc.up(old_x, old_y) || myFunc.down(old_x, old_y)) {
-            swap(element);
+        $(divs[e1]).text($(divs[e2]).text());
+        $(divs[e1]).css({
+            // "backgroundPosition": -divs[e2].x + 'px ' + (-divs[e2].y) + 'px'    // if cell image has to be shown
+            "backgroundSize": '0 0'
+        });
+        divs[e1].x = divs[e2].x;
+        divs[e1].y = divs[e2].y;
+
+
+        $(divs[e2]).text(txt);
+        $(divs[e2]).css({
+            "backgroundPosition": -x + 'px ' + (-y) + 'px',
+            "backgroundSize": '400px 400px'
+        });
+        divs[e2].x = x;
+        divs[e2].y = y;
+
+        // Empty cell will change
+        var row = Math.floor(e1 / puzzleSize);
+        var col = e1 % puzzleSize;
+        emptyRow = row;
+        emptyCol = col;
+
+    }
+
+    function movable(i) {
+        // calculate row and column for this piece
+        var row = Math.floor(i / puzzleSize);
+        var col = i % puzzleSize;
+        return Math.abs(row - emptyRow) + Math.abs(col - emptyCol) == 1;
+    }
+
+    function checkWinner() {
+        var s = 0;
+        for (var i = 0; i < divs.length; i++) {
+            div = $(divs[i]);
+            if (i == parseInt(div.text()) - 1) {
+                s += 1;
+            }
         }
+        return s == divs.length;
+
     }
-}
+
+
+    $("#shufflebutton").click(function() {
+        for (var i = 0; i <= 1000; i++) {
+            var index = parseInt(Math.random() * puzzleSize * puzzleSize - 1);
+            if (movable(index)) {
+                swapPiece(index, emptyCol % puzzleSize + emptyRow * puzzleSize);
+            }
+        }
+    });
+
+
+
+});

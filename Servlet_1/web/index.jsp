@@ -12,6 +12,5 @@
   </head>
   <body>
     <p>If you need help click the link <a href='support'>cs tech support</a></p>
-
   </body>
 </html>
